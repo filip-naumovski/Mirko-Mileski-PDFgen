@@ -1,0 +1,24 @@
+﻿<UserControl 
+             MinWidth="1076" MinHeight="616.5"
+             x:Class="mirmil.Pages.Home"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" Height="631.5" Width="1079">
+    <Grid HorizontalAlignment="Left" Height="608" Margin="39,0,0,0" VerticalAlignment="Top" Width="1030">
+        <DataGrid x:Name="Uchenici" ItemsSource="{Binding}" CanUserSortColumns="False" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" IsReadOnly="True" VerticalGridLinesBrush="White" HorizontalGridLinesBrush="White" BorderThickness="1" Margin="0,0,0,58" MaxColumnWidth="200">
+
+        </DataGrid>
+        <Button x:Name="button" Content="Dodadi" HorizontalAlignment="Left" Margin="906,571,-68,-55" VerticalAlignment="Top" Width="109" RenderTransformOrigin="1.073,3.906" Height="32" Click="button_Click">
+
+        </Button>
+        <Button x:Name="button1" Content="Refresh" HorizontalAlignment="Left" Margin="767,571,0,0" VerticalAlignment="Top" Width="96" Height="32" Click="button1_Click"/>
+        <Button x:Name="button2" Content="Export" HorizontalAlignment="Left" Margin="635,571,0,0" VerticalAlignment="Top" Width="89" Height="32" Click="button2_Click"/>
+        <TextBox x:Name="searchBox" HorizontalAlignment="Left" Height="32" Margin="23,571,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" TextChanged="SearchBox_TextChanged" KeyDown="SearchBox_Enter"/>
+        <Button x:Name="searchButton" Content="Search" HorizontalAlignment="Left" Margin="242,571,0,0" VerticalAlignment="Top" Width="74" Height="32" Click="SearchButton_Click"/>
+    </Grid>
+
+
+
+
+</UserControl>
