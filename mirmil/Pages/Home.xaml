@@ -6,16 +6,34 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" Height="631.5" Width="1079">
     <Grid HorizontalAlignment="Left" Height="608" Margin="39,0,0,0" VerticalAlignment="Top" Width="1030">
-        <DataGrid x:Name="Uchenici" ItemsSource="{Binding}" CanUserSortColumns="False" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" IsReadOnly="True" VerticalGridLinesBrush="White" HorizontalGridLinesBrush="White" BorderThickness="1" Margin="0,0,0,58" MaxColumnWidth="200">
+        <DataGrid x:Name="Uchenici" ItemsSource="{Binding}" CanUserSortColumns="False" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" IsReadOnly="True" VerticalGridLinesBrush="White" HorizontalGridLinesBrush="White" BorderThickness="1" Margin="-10,-9,10,67" MaxColumnWidth="200">
 
         </DataGrid>
-        <Button x:Name="button" Content="Dodadi" HorizontalAlignment="Left" Margin="906,571,-68,-55" VerticalAlignment="Top" Width="109" RenderTransformOrigin="1.073,3.906" Height="32" Click="button_Click">
+        <Button x:Name="button" Content="Нов ученик" HorizontalAlignment="Left" Margin="906,571,-68,-55" VerticalAlignment="Top" Width="109" RenderTransformOrigin="1.073,3.906" Height="32" Click="button_Click">
 
         </Button>
-        <Button x:Name="button1" Content="Refresh" HorizontalAlignment="Left" Margin="767,571,0,0" VerticalAlignment="Top" Width="96" Height="32" Click="button1_Click"/>
-        <Button x:Name="button2" Content="Export" HorizontalAlignment="Left" Margin="635,571,0,0" VerticalAlignment="Top" Width="89" Height="32" Click="button2_Click"/>
+        <Button x:Name="button1" Content="Refresh" HorizontalAlignment="Left" Margin="805,571,0,0" VerticalAlignment="Top" Width="96" Height="32" Click="button1_Click"/>
+        <Button x:Name="button2" Content="Export" HorizontalAlignment="Left" Margin="650,573,0,0" VerticalAlignment="Top" Width="89" Height="32" Click="button2_Click"/>
         <TextBox x:Name="searchBox" HorizontalAlignment="Left" Height="32" Margin="23,571,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" TextChanged="SearchBox_TextChanged" KeyDown="SearchBox_Enter"/>
-        <Button x:Name="searchButton" Content="Search" HorizontalAlignment="Left" Margin="242,571,0,0" VerticalAlignment="Top" Width="74" Height="32" Click="SearchButton_Click"/>
+        <Button x:Name="searchButton" Content="Барај" HorizontalAlignment="Left" Margin="221,571,0,0" VerticalAlignment="Top" Width="74" Height="32" Click="SearchButton_Click"/>
+        <TextBox x:Name="classText" Text="Клас" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="348,577,0,8" TextWrapping="Wrap" VerticalAlignment="Center" Width="42" TextChanged="ClassTextBox_TextChanged" GotFocus="ClassTextBox_OnGotFocus"/>
+        <ComboBox x:Name="profession" SelectedIndex="0" HorizontalAlignment="Left" Margin="395,577,0,0" VerticalAlignment="Top" Width="125" SelectionChanged="ComboBox_SelectionChanged">
+            <ComboBoxItem>Струка</ComboBoxItem>
+            <ComboBoxItem>Гимназиско образование</ComboBoxItem>
+            <ComboBoxItem>Здравствена струка</ComboBoxItem>
+            <ComboBoxItem>Економска струка</ComboBoxItem>
+            <ComboBoxItem>Машинска струка</ComboBoxItem>
+            <ComboBoxItem>Електротехничка струка</ComboBoxItem>
+            <ComboBoxItem>Хемиско-технолошка струка</ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="schoolYear" SelectedIndex="0" HorizontalAlignment="Left" Margin="525,577,0,0" VerticalAlignment="Top" Width="120" Height="23" SelectionChanged="ComboBox1_SelectionChanged">
+            <ComboBoxItem>Учебна година</ComboBoxItem>
+            <ComboBoxItem>2020/21</ComboBoxItem>
+            <ComboBoxItem>2021/22</ComboBoxItem>
+            <ComboBoxItem>2022/23</ComboBoxItem>
+            <ComboBoxItem>2023/24</ComboBoxItem>
+        </ComboBox>
+
     </Grid>
 
 

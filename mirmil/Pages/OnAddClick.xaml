@@ -13,10 +13,10 @@
             <ColumnDefinition Width="16*"/>
             <ColumnDefinition Width="13*"/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="Ime" TabIndex="0" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="Ime"  GotFocus="Ime_OnGotFocus" LostFocus="Ime_OnLostFocus" KeyDown="Ime_Enter" Foreground="#FFA19DA1" VerticalAlignment="Top" Width="230" Margin="22,21,0,0" TextChanged="Ime_TextChanged" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="Prezime" TabIndex="1" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="Prezime"  GotFocus="Prezime_OnGotFocus" LostFocus="Prezime_OnLostFocus" Foreground="#FFA19DA1" VerticalAlignment="Top" Width="230" Margin="22,56,0,0" TextChanged="Prezime_TextChanged" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="Tatkovoime" TabIndex="2" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="Tatkovo ime"  GotFocus="Tatkovo_OnGotFocus" LostFocus="Tatkovo_OnLostFocus" Foreground="#FFA19DA1" VerticalAlignment="Top" Width="230" Margin="22,93,0,0" TextChanged="Tatkovoime_TextChanged" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="Datum" TabIndex="3" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="Datum na ragjanje (YYYY-MM-DD)"  GotFocus="Datum_OnGotFocus" LostFocus="Datum_OnLostFocus" Foreground="#FFA19DA1" VerticalAlignment="Top" Width="230" Margin="22,131,0,0" TextChanged="Datum_TextChanged" Grid.ColumnSpan="2"/>
-        <Button x:Name="button" TabIndex="4" IsDefault="True" Content="Dodadi" HorizontalAlignment="Left" Margin="22,199,0,0" VerticalAlignment="Top" Width="90" Click="button_Click"/>
+        <TextBox x:Name="Ime" TabIndex="0" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="Име"  GotFocus="Ime_OnGotFocus" LostFocus="Ime_OnLostFocus" KeyDown="Ime_Enter" Foreground="#FFA19DA1" VerticalAlignment="Top" Width="230" Margin="22,21,0,0" TextChanged="Ime_TextChanged" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="Prezime" TabIndex="1" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="Презиме"  GotFocus="Prezime_OnGotFocus" LostFocus="Prezime_OnLostFocus" Foreground="#FFA19DA1" VerticalAlignment="Top" Width="230" Margin="22,56,0,0" TextChanged="Prezime_TextChanged" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="Tatkovoime" TabIndex="2" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="Татково име"  GotFocus="Tatkovo_OnGotFocus" LostFocus="Tatkovo_OnLostFocus" Foreground="#FFA19DA1" VerticalAlignment="Top" Width="230" Margin="22,93,0,0" TextChanged="Tatkovoime_TextChanged" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="Datum" TabIndex="3" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="Датум на раѓање (YYYY-MM-DD)"  GotFocus="Datum_OnGotFocus" LostFocus="Datum_OnLostFocus" Foreground="#FFA19DA1" VerticalAlignment="Top" Width="230" Margin="22,131,0,0" TextChanged="Datum_TextChanged" Grid.ColumnSpan="2"/>
+        <Button x:Name="button" TabIndex="4" IsDefault="True" Content="Додади" HorizontalAlignment="Left" Margin="22,199,0,0" VerticalAlignment="Top" Width="90" Click="button_Click"/>
     </Grid>
 </mui:ModernWindow>

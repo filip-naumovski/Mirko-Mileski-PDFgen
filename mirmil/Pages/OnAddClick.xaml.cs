@@ -29,7 +29,7 @@ namespace mirmil.Pages
         bool tatkovoWrite = false;
         bool datumWrite = false;
 
-        //Shminkanje
+        
 
         private void Ime_OnGotFocus(object sender, RoutedEventArgs e)
         {
@@ -128,29 +128,28 @@ namespace mirmil.Pages
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
+            newIme = Ime.Text;
+            newPrezime = Prezime.Text;
+            newTatkovo = Tatkovoime.Text;
+            newDatum = Datum.Text;
             if (newIme == "" || newPrezime == "" || newTatkovo == "" || newDatum == "")
             {
                 this.Hide();
                 return;
             }
-            newIme = Ime.Text;
-            newPrezime = Prezime.Text;
-            newTatkovo = Tatkovoime.Text;
-            newDatum = Datum.Text;
-
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString =
-                @"Data Source=localhost\sqlexpress;" +
+                @"Data Source=localhost\sqlserver;" +
                 "Initial Catalog=Mirko Mileski;" +
-                "User id=mirko;" +
-                "Password=mirko;";
-            string sqlQuery = "INSERT INTO Uchenici VALUES(@newIme,@newPrezime,@newTatkovo,@newDatum);";
+                "User id=sa;" +
+                "Password=admin1234;";
+            string sqlQuery = "INSERT INTO dbo.Uchenici VALUES(@newIme,@newPrezime,@newTatkovo,@newDatum);";
             SqlCommand comm = new SqlCommand(sqlQuery, conn);
             conn.Open();
-            comm.Parameters.AddWithValue("newIme", newIme);
-            comm.Parameters.AddWithValue("newPrezime", newPrezime);
-            comm.Parameters.AddWithValue("newTatkovo", newTatkovo);
-            comm.Parameters.AddWithValue("newDatum", newDatum);
+            comm.Parameters.AddWithValue("@newIme", newIme);
+            comm.Parameters.AddWithValue("@newPrezime", newPrezime);
+            comm.Parameters.AddWithValue("@newTatkovo", newTatkovo);
+            comm.Parameters.AddWithValue("@newDatum", newDatum);
             comm.ExecuteNonQuery();
             this.Hide();
         }

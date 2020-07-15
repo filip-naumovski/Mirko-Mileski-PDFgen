@@ -34,10 +34,10 @@ namespace mirmil.Pages
 
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString =
-                @"Data Source=localhost\sqlexpress;" +
+                @"Data Source=localhost\sqlserver;" +
                 "Initial Catalog=Mirko Mileski;" +
-                "User id=mirko;" +
-                "Password=mirko;";
+                "User id=sa;" +
+                "Password=admin1234;";
             AppearanceManager.Current.ThemeSource = AppearanceManager.DarkThemeSource;
             conn.Open();
             SqlCommand comm = new SqlCommand();
@@ -76,10 +76,10 @@ namespace mirmil.Pages
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString =
-                @"Data Source=localhost\sqlexpress;" +
+                @"Data Source=localhost\sqlserver;" +
                 "Initial Catalog=Mirko Mileski;" +
-                "User id=mirko;" +
-                "Password=mirko;";
+                "User id=sa;" +
+                "Password=admin1234;";
             AppearanceManager.Current.ThemeSource = AppearanceManager.DarkThemeSource;
             conn.Open();
             SqlCommand comm = new SqlCommand();
@@ -109,6 +109,26 @@ namespace mirmil.Pages
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
+            if (Uchenici.SelectedItem == null)
+            {
+                MessageBox.Show("Немате одбрано ученик/ученичка.");
+                return;
+            }
+            if(classText.Text == "Клас" || classText.Text == "")
+            {
+                MessageBox.Show("Немате внесено клас.");
+                return;
+            }
+            if (profession.Text == "Струка")
+            {
+                MessageBox.Show("Немате одбрано струка.");
+                return;
+            }
+            if (schoolYear.Text == "Учебна година")
+            {
+                MessageBox.Show("Немате одбрано учебна година.");
+                return;
+            }
             DataRowView selectedRowView = (DataRowView) Uchenici.SelectedItem;
             DataRow selectedRow = selectedRowView.Row;
             string docIme = selectedRow["Ime"].ToString() + selectedRow["Prezime"].ToString();
@@ -121,10 +141,13 @@ namespace mirmil.Pages
             fields = form.GetFormFields();
             string FONT = "../../fonts/OpenSans-Regular.ttf";
             PdfFont font1 = PdfFontFactory.CreateFont(FONT, "Cp1251", true);
-            fields["tb1"].SetValue(selectedRow["Ime"].ToString(), font1, 10);
-            fields["tb2"].SetValue(selectedRow["Prezime"].ToString(), font1, 10);
-            fields["tb3"].SetValue(selectedRow["Tatkovo ime"].ToString(), font1, 10);
-            fields["tb4"].SetValue(selectedRow["Datum na ragjanje"].ToString(), font1, 10);
+            fields["tb1"].SetValue(selectedRow["Ime"].ToString(), font1, 12);
+            fields["tb2"].SetValue(selectedRow["Prezime"].ToString(), font1, 12);
+            fields["tb3"].SetValue(selectedRow["Tatkovo ime"].ToString(), font1, 12);
+            fields["tb4"].SetValue(selectedRow["Datum na raganje"].ToString(), font1, 12);
+            fields["tb5"].SetValue(schoolYear.Text, font1, 14);
+            fields["tb6"].SetValue(profession.Text, font1, 10);
+            fields["tb7"].SetValue(classText.Text, font1, 14);
             form.FlattenFields();
             pdf.Close();
             MessageBox.Show("Успешно е експортиран фајлот.");
@@ -135,10 +158,10 @@ namespace mirmil.Pages
             searchText = searchBox.Text;
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString =
-                @"Data Source=localhost\sqlexpress;" +
+                @"Data Source=localhost\sqlserver;" +
                 "Initial Catalog=Mirko Mileski;" +
-                "User id=mirko;" +
-                "Password=mirko;";
+                "User id=sa;" +
+                "Password=admin1234;";
             AppearanceManager.Current.ThemeSource = AppearanceManager.DarkThemeSource;
             conn.Open();
             SqlCommand comm = new SqlCommand();
@@ -202,6 +225,30 @@ namespace mirmil.Pages
             {
                 SearchButton_Click(this, new RoutedEventArgs());
             }
+        }
+
+        private void ClassTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+        private void ClassTextBox_OnGotFocus(object sender, RoutedEventArgs e)
+        {
+            bool firstclick = true;
+            if (firstclick == true)
+            {
+                classText.Text = "";
+            }
+            firstclick = false;
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void ComboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
